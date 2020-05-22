@@ -1,9 +1,9 @@
 package com.example.demo.domain
 
-class Book(
-        bookId: Int,
-        bookName: String,
-        bookAuthor: String
+data class Book(
+        val bookId: Int,
+        val bookName: String,
+        val bookAuthor: String
 ){
 
 }

@@ -1,5 +1,5 @@
 package com.example.demo.domain
 
-class LibraryEvent(libraryEventId: Int, book: Book) {
+data class LibraryEvent(val libraryEventId: Int, val book: Book) {
 
 }
