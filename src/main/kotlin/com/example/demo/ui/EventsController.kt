@@ -19,7 +19,7 @@ class EventsController{
 
     @PostMapping("/v1/libraryevent")
     fun handler(@RequestBody libraryEvent: LibraryEvent): ResponseEntity<LibraryEvent>{
-        libraryEventProducer.sendLibraryEvent(libraryEvent)
+        libraryEventProducer.sendLibraryEventToCustomTopicUsingProducerRecord(libraryEvent)
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(libraryEvent)
