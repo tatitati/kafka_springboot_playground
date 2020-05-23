@@ -11,7 +11,7 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
     admin:
       properties:
-        bootstrap.servers: localhost:9092, localhost:9093, localhost:9094
+        bootstrap.servers: localhost:9092
 ---
 spring:
   profiles: dev
