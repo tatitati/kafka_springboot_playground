@@ -1,7 +1,7 @@
-package app.infrastructure
+package infrastructure
 
-import app.domain.LibraryEvent
 import com.fasterxml.jackson.databind.ObjectMapper
+import domain.LibraryEvent
 import org.apache.kafka.clients.producer.ProducerRecord
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.kafka.core.KafkaTemplate
