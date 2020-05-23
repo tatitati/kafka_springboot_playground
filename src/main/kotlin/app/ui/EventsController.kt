@@ -1,7 +1,7 @@
-package com.example.demo.ui
+package app.ui
 
-import com.example.demo.domain.LibraryEvent
-import com.example.demo.producer.LibraryEventProducer
+import app.domain.LibraryEvent
+import app.infrastructure.LibraryEventProducer
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

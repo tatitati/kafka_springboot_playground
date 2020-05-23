@@ -1,4 +1,4 @@
-package com.example.demo.domain
+package app.domain
 
 data class Book(
         val bookId: Int,

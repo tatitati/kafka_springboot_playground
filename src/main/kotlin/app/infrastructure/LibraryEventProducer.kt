@@ -1,14 +1,11 @@
-package com.example.demo.producer
+package app.infrastructure
 
-import com.example.demo.domain.LibraryEvent
-import com.fasterxml.jackson.core.JsonProcessingException
+import app.domain.LibraryEvent
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.kafka.clients.producer.ProducerRecord
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.kafka.core.KafkaTemplate
-import org.springframework.kafka.support.SendResult
 import org.springframework.stereotype.Component
-import org.springframework.util.concurrent.ListenableFutureCallback
 
 @Component
 class LibraryEventProducer {
