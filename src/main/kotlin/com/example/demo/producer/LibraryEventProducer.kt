@@ -12,10 +12,6 @@ import org.springframework.util.concurrent.ListenableFutureCallback
 @Component
 class LibraryEventProducer {
 
-    //    producer:
-    //      bootstrap-servers: localhost:9092
-    //      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer  // this is the int of kafkatemplate
-    //      value-serializer: org.apache.kafka.common.serialization.StringSerializer // this is the String of Kafkatemplate
     @Autowired
     lateinit var kafkaTemplate: KafkaTemplate<Int, String>
 

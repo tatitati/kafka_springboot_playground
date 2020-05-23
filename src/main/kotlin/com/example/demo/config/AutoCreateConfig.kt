@@ -12,10 +12,10 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.core.ProducerFactory
 
-
 @Configuration
 @Profile("local")
 class AutoCreateConfig {
+
     @Bean
     fun createNewTopic(): NewTopic {
        return TopicBuilder
@@ -24,6 +24,4 @@ class AutoCreateConfig {
                 .replicas(1)
                 .build()
     }
-
-
 }
