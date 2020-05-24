@@ -12,7 +12,6 @@ class AutoCreateConfig {
 
     @Bean
     fun createNewTopic(): NewTopic {
-        val a = 5
        return TopicBuilder
                 .name("library-events")
                 .partitions(1)
