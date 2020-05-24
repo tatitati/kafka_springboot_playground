@@ -1,4 +1,4 @@
-package subprojects
+package myapp
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

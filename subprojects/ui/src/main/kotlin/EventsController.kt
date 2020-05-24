@@ -1,6 +1,5 @@
 package ui
 
-
 import domain.LibraryEvent
 import infrastructure.LibraryEventProducer
 import org.springframework.beans.factory.annotation.Autowired

@@ -1,13 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.3.0.RELEASE" apply false
-	id("io.spring.dependency-management") version "1.0.9.RELEASE" apply false
+	id("org.springframework.boot") version "2.3.0.RELEASE"
+	id("io.spring.dependency-management") version "1.0.9.RELEASE"
 	id("org.jetbrains.kotlin.jvm") version "1.3.72" // == kotlin("jvm") version "1.3.72" apply false
 	id("org.jetbrains.kotlin.plugin.spring") version "1.3.72" // == kotlin("plugin.spring") version "1.3.72" apply false
 }
 
-subprojects{
+allprojects{
 	apply(plugin = "org.springframework.boot")
 	apply(plugin = "io.spring.dependency-management")
 	apply(plugin = "org.jetbrains.kotlin.jvm")
@@ -51,10 +51,16 @@ subprojects{
 }
 
 
+dependencies{
+	implementation(project(":subprojects:ui"))
+	implementation(project(":subprojects:domain"))
+	implementation(project(":subprojects:infrastructure"))
+}
 
 project(":subprojects:ui"){
 	dependencies{
 		implementation(project(":subprojects:infrastructure"))
+		implementation(project(":subprojects:domain"))
 	}
 }
 
