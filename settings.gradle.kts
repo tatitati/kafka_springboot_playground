@@ -1,10 +1,9 @@
 rootProject.name = "root"
 
+include("domain", "infrastructure", "ui")
 
-include(
-        "subprojects:domain",
-        "subprojects:infrastructure",
-        "subprojects:ui"
-)
+project(":domain").projectDir = file("subprojects/domain")
+project(":infrastructure").projectDir = file("subprojects/infrastructure")
+project(":ui").projectDir = file("subprojects/ui")
 
 

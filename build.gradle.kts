@@ -59,20 +59,20 @@ allprojects{
 
 
 dependencies{
-	implementation(project(":subprojects:ui"))
-	implementation(project(":subprojects:domain"))
-	implementation(project(":subprojects:infrastructure"))
+	implementation(project(":ui"))
+	implementation(project(":domain"))
+	implementation(project(":infrastructure"))
 }
 
-project(":subprojects:ui"){
+project(":ui"){
 	dependencies{
-		implementation(project(":subprojects:infrastructure"))
-		implementation(project(":subprojects:domain"))
+		implementation(project(":infrastructure"))
+		implementation(project(":domain"))
 	}
 }
 
-project(":subprojects:infrastructure"){
+project(":infrastructure"){
 	dependencies{
-		implementation(project(":subprojects:domain"))
+		implementation(project(":domain"))
 	}
 }
