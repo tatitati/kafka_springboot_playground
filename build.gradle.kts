@@ -54,12 +54,12 @@ subprojects{
 
 project(":subprojects:ui"){
 	dependencies{
-		implementation(":subprojects:infrastructure")
+		implementation(project(":subprojects:infrastructure"))
 	}
 }
 
 project(":subprojects:infrastructure"){
 	dependencies{
-		implementation(":subprojects:domain")
+		implementation(project(":subprojects:domain"))
 	}
 }
