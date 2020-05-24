@@ -18,7 +18,7 @@ class LibraryEventProducer {
 
     fun sendLibraryEventToDefaultTopic(libraryEvent: LibraryEvent) {
         val key = libraryEvent.libraryEventId
-        val value = objectMapper!!.writeValueAsString(libraryEvent)
+        val value = objectMapper.writeValueAsString(libraryEvent)
         val listenableFuture = kafkaTemplate.sendDefault(key, value)
         listenableFuture.addCallback({
             println(it!!.recordMetadata.toString())
@@ -29,7 +29,7 @@ class LibraryEventProducer {
 
     fun sendLibraryEventToCustomTopic(libraryEvent: LibraryEvent) {
         val key = libraryEvent.libraryEventId
-        val value = objectMapper!!.writeValueAsString(libraryEvent)
+        val value = objectMapper.writeValueAsString(libraryEvent)
         val listenableFuture = kafkaTemplate.send("library-events", key, value)
         listenableFuture.addCallback({
             println(it!!.recordMetadata.toString())
@@ -40,7 +40,7 @@ class LibraryEventProducer {
 
     fun sendLibraryEventToCustomTopicUsingProducerRecord(libraryEvent: LibraryEvent) {
         val key: Int = libraryEvent.libraryEventId
-        val value: String = objectMapper!!.writeValueAsString(libraryEvent)
+        val value: String = objectMapper.writeValueAsString(libraryEvent)
 
         val producerRecord: ProducerRecord<Int, String> = ProducerRecord("library-events", key, value)
 
