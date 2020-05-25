@@ -13,7 +13,6 @@ allprojects{
 	apply(plugin = "org.jetbrains.kotlin.jvm")
 	apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 
-
 	group = "com.example"
 	version = "0.0.1-SNAPSHOT"
 
@@ -65,12 +64,12 @@ project(":myapp") {
 
 project(":ui"){
 	dependencies{
-		implementation(project(":infrastructure"))
+		api(project(":infrastructure"))
 	}
 }
 
 project(":infrastructure"){
 	dependencies{
-		implementation(project(":domain"))
+		api(project(":domain"))
 	}
 }
