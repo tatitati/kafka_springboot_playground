@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "2.3.0.RELEASE" apply false
 	id("io.spring.dependency-management") version "1.0.9.RELEASE" apply false
-	id("org.jetbrains.kotlin.jvm") version "1.3.72" // == kotlin("jvm") version "1.3.72" apply false
-	id("org.jetbrains.kotlin.plugin.spring") version "1.3.72" // == kotlin("plugin.spring") version "1.3.72" apply false
+	id("org.jetbrains.kotlin.jvm") version "1.3.72"
+	id("org.jetbrains.kotlin.plugin.spring") version "1.3.72"
 }
 
 allprojects{
@@ -49,25 +49,23 @@ allprojects{
 		}
 	}
 
-	tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
-		enabled = false
-	}
-	tasks.withType<Jar> {
-		enabled = true
-	}
+//	tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+//		enabled = false
+//	}
+//	tasks.withType<Jar> {
+//		enabled = true
+//	}
 }
 
-
-dependencies{
-	implementation(project(":ui"))
-	implementation(project(":domain"))
-	implementation(project(":infrastructure"))
+project(":myapp") {
+	dependencies {
+		implementation(project(":ui"))
+	}
 }
 
 project(":ui"){
 	dependencies{
 		implementation(project(":infrastructure"))
-		implementation(project(":domain"))
 	}
 }
 
